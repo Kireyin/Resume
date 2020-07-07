@@ -58,6 +58,7 @@ You know support for Swift on Windows will soon be a thing officaliy? I wonder w
  - WebKit, SafariServices
  - ARKit, AVFoundation, AVKit, CoreImage
  - MapKit, CoreLocation
+ - [Vapor](https://github.com/vapor/vapor)
  - UX design
  - Android, Kotlin
  - JS, ReactJS, Flow, Redux
