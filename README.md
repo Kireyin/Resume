@@ -1,6 +1,4 @@
-I don't understand the concept of Resume, reading about stuff I've done should not replace a first interview in which we talk.
-So here's kind of a resume, with comments, side notes and memories.
-You won't find a PDF resume here, too hard to keep up to date, and I'm no UI designer 🙊
+Sorry, you won't find a PDF resume here, it's too hard to keep up to date, and I'm no UI designer 🙊
 
 # Alexandre "Kireyin" Brispot ![Open to offers](https://img.shields.io/badge/Open%20to%20offers-yes-1abc9c.svg)
 ## Experiences
