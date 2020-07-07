@@ -53,15 +53,21 @@ Of course I do iOS applications, but I'll be happy do do something else, like a 
 Anyway, thi is not an exhaustive list, ask me about what you need, I'll be franc and tell you if I can't do it, promise. Nothing can't be learnt with the proper ressources.
 You know support for Swift on Windows will soon be a thing officaliy? I wonder which UI library will be best to use then.
  
- - UIKit, Dispatch
- - SwiftUI, Combine
- - WebKit, SafariServices
- - ARKit, AVFoundation, AVKit, CoreImage
- - MapKit, CoreLocation
- - [Vapor](https://github.com/vapor/vapor)
- - UX design
- - Android, Kotlin
- - JS, ReactJS, Flow, Redux
+- UIKit, Dispatch
+- SwiftUI, Combine
+- WebKit, SafariServices
+- ARKit, AVFoundation, AVKit, CoreImage
+- MapKit, CoreLocation
+- [Vapor](https://github.com/vapor/vapor)
+- UX design
+- Android, Kotlin
+- JS, ReactJS, Flow, Redux
+
+## Projects to check ?
+For now you can check those small projects, they have been done during "LevelUp" time we setup at Mention, usually every Friday afternoon.
+
+- [ChartsUI](https://github.com/Kireyin/ChartsUI), a small charts library in SwiftUI, with animations (only has Donuts charts for now)
+- [ARMon](https://github.com/Kireyin/ARMon), an ARKit demo, placing 3D Pokemons on playing cards
 
 ## What else ?
 I love photography, I'll probably have my camera with me when we meet.</br>
@@ -72,3 +78,7 @@ I really really like to work UX with designers, and talk about improvements with
 Please talk to me if you have a complain, I'll listen and improve (unless you don't like the smell of tea, then it's too bad for you 😝)</br>
 Resumes are a terrible thing</br>
 Remote work allows for more efficiency and a better work/life balance, consider it ;)</br>
+
+## Contact me
+[LinkedIn](https://www.linkedin.com/in/kireyin/)
+[Twitter](https://twitter.com/Kireyin)
