@@ -1,6 +1,6 @@
 Sorry, you won't find a PDF resume here, it's too hard to keep up to date, and I'm no UI designer 🙊
 
-# Alexandre "Kireyin" Brispot ![Open to offers](https://img.shields.io/badge/Open%20to%20offers-yes-1abc9c.svg)
+# Alexandre "Kireyin" Brispot [![Open to offers](https://img.shields.io/badge/Open%20to%20offers-yes-1abc9c.svg)](#)
 ## Experiences
 ### Mention Solutions - 2015->Today
 - Since day one at Mention I have been a one man team 💪
