@@ -15,8 +15,13 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
       - uses: baileyjm02/markdown-to-pdf@v1.0.1
         with:
           input_dir: resume
           output_dir: resume
           build_html: false
+      - uses: actions/upload-artifact@v1
+        with:
+          name: docs
+          path: resume
