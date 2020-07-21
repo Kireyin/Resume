@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: docker://pandoc/core:2.9
         with:
-          args: "./README.md" # gets appended to pandoc command
+          args: "/README.md" # gets appended to pandoc command
