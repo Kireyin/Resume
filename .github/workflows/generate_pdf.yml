@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: baileyjm02/markdown-to-pdf
+      - uses: baileyjm02/markdown-to-pdf@v1.0.1
         with:
           input_dir: resume
           output_dir: resume
