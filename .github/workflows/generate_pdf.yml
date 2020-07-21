@@ -12,12 +12,24 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  convert_via_pandoc:
+  generatePDFResume:
     runs-on: ubuntu-18.04
     steps:
-      - name: Convert to PDF
-        uses: rseng/pdf-generator@master
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Generate PDF
+        uses: baileyjm02/markdown-to-pdf@v1.0.1
         with:
-          paper_markdown: README.md
-          paper_outfile: resume.pdf
-          pdf_type: pdf
+          input_dir: resume
+          output_dir: resume
+          build_html: false
+      - name: Push
+        run: | 
+          git config user.name Kireyin
+          git config user.email kireyin@users.noreply.github.com
+          git add .
+          git commit -am "generated"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
