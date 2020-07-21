@@ -21,9 +21,4 @@ jobs:
           input_dir: resume
           output_dir: resume
           build_html: false
-      - run: |
-          git config user.name Kireyin
-          git config user.email abrispot@gmail.com
-          git add .
-          git commit -m "generated"
-          git push
+      - uses: ludeeus/action-push@0.0.1
