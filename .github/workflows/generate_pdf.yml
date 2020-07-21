@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: docker://pandoc/core:2.9
         with:
-          args: "README.md -f markdown -t pdf -s -o resume.pdf" # gets appended to pandoc command
+          args: "https://github.com/Kireyin/Resume/blob/master/README.md -f markdown -t pdf -s -o resume.pdf" # gets appended to pandoc command
