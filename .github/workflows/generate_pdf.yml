@@ -21,7 +21,3 @@ jobs:
           input_dir: resume
           output_dir: resume
           build_html: false
-      - uses: actions/upload-artifact@v1
-        with:
-          name: docs
-          path: resume
