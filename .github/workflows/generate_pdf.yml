@@ -15,9 +15,9 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
-      - name: Convert to PDF
-        uses: rseng/pdf-generator@master
+      - uses: actions/checkout@v2
+      - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          paper_markdown: README.md
-          paper_outfile: resume.pdf
-          pdf_type: pdf
+          input_dir: resume
+          output_dir: resume
+          build_html: false
