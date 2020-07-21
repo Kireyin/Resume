@@ -22,8 +22,8 @@ jobs:
           output_dir: resume
           build_html: false
       - run: |
-          git config Kireyin github-actions
-          git config abrispot@gmail.com github-actions@github.com
+          git config user.name Kireyin
+          git config user.email abrispot@gmail.com
           git add .
           git commit -m "generated"
           git push
