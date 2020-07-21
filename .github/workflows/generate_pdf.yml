@@ -28,4 +28,4 @@ jobs:
           git config user.email kireyin@gmail.com
           git add .
           git commit -m "generated"
-          git push origin ${GITHUB_HEAD_REF}
+          git push -u origin ${GITHUB_HEAD_REF}
