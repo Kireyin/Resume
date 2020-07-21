@@ -23,9 +23,8 @@ jobs:
           build_html: false
       - name: Branch name
         run: echo running on branch ${GITHUB_HEAD_REF}
-      - run: | 
-          git config user.name Kireyin
-          git config user.email kireyin@gmail.com
-          git add .
-          git commit -m "generated"
-          git push -u origin ${GITHUB_HEAD_REF}
+      - run: git config user.name Kireyin
+      - run: git config user.email kireyin@gmail.com
+      - run: git add .
+      - run: git commit -m "generated"
+      - run: git push -u origin ${GITHUB_HEAD_REF}
