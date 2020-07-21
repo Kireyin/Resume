@@ -18,7 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Pull
-        run: git pull origin HEAD:${GITHUB_HEAD_REF}
+        run: |
+          git config pull.rebase true
+          git pull origin HEAD:${GITHUB_HEAD_REF}
       - name: Generate PDF
         uses: baileyjm02/markdown-to-pdf@v1.0.1
         with:
