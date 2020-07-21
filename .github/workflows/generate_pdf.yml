@@ -22,10 +22,10 @@ jobs:
           output_dir: resume
           build_html: false
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}
+        run: echo running on branch ${GITHUB_HEAD_REF}
       - run: | 
           git config user.name Kireyin
           git config user.email kireyin@gmail.com
           git add .
           git commit -m "generated"
-          git push origin ${GITHUB_REF##*/}
+          git push origin ${GITHUB_HEAD_REF}
