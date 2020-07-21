@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Generate PDF
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -15,6 +15,8 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
-      - uses: docker://pandoc/core:2.9
-        with:
-          args: "https://github.com/Kireyin/Resume/blob/master/README.md -f markdown -t pdf -s -o resume.pdf" # gets appended to pandoc command
+      - uses: rseng/pdf-generator@master
+      - with:
+          paper_markdown: README.md
+          paper_outfile: resume.pdf
+          pdf_type: pdf
