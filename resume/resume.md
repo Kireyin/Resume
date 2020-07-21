@@ -1,4 +1,4 @@
-# Alexandre "Kireyin" Brispot [![Open to offers](https://img.shields.io/badge/Open%20to%20offers-yes-1abc9c.svg)](#)
+# Alexandre "Kireyin" Brispot
 ## Experiences
 ### Mention Solutions - 2015->Today
 - Since day one at Mention I have been a one man team 💪
