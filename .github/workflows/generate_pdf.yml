@@ -21,3 +21,8 @@ jobs:
           input_dir: resume
           output_dir: resume
           build_html: false
+      - uses: actions/checkout@v2
+      - run: |
+          git add .
+          git commit -m "generated"
+          git push
