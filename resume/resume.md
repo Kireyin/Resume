@@ -1,7 +1,6 @@
 # Alexandre "Kireyin" Brispot
 ## Experiences
 ### Mention Solutions - 2015->Today
-- Since day one at Mention I have been a one man team 💪
 - I started there by an audit of there iOS app, it leaded to a complete refactoring, migrating from objective-C to Swift, reducing dependencies and reworking UX and UI with the help of the designer
 - Next step was to extract the business logic into an SDK. This served two purposes, architecturing the app into separated separated "front" and business parts, and preparing for future applications depending on the same APIs
 - API is a mix of REST and GraphQL, of course I much prefer GraphQL over Rest 😼 Btw, the GraphQL implementation was completely custom made to avoid those huge generated files that Apollo outputs 🤢
