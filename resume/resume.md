@@ -1,4 +1,4 @@
-# Alexandre "Kireyin" Brispot
+# Alexandre Brispot
 ## Experiences
 ### Mention Solutions - 2015->Today
 - I started there by an audit of there iOS app, it leaded to a complete refactoring, migrating from objective-C to Swift, reducing dependencies and reworking UX and UI with the help of the designer
