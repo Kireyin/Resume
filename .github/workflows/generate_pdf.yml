@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Generate PDF
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/latex:2.9
         with:
           args: "--from markdown --to pdf resume/resume.md -o resume.pdf"
       - name: Commit
