@@ -1,7 +1,7 @@
 # Alexandre Brispot [![Open to offers](https://img.shields.io/badge/Open%20to%20offers-yes-1abc9c.svg)](#)
 
-[![Raw version](https://img.shields.io/badge/Raw%20version-Read-FF6B6B.svg)](resume/resume.md)
-[![PDF version](https://img.shields.io/badge/PDF%20version-Download-A09BE7.svg)](https://github.com/Kireyin/Resume/raw/master/resume/resume.pdf)
+[![Raw version](https://img.shields.io/badge/Raw%20version-Read-FF6B6B.svg)](resume.md)
+[![PDF version](https://img.shields.io/badge/PDF%20version-Download-A09BE7.svg)](https://github.com/Kireyin/Resume/resume.pdf)
 
 If you are looking for an iOS dev, a Mobile dev lead/manager, in Paris (FR) or remotely, you are on the good repo ;)</br>
 Just click the badges above to read or dowload my resume, it also contains my contact info.</br>
