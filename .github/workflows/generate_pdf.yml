@@ -20,7 +20,7 @@ jobs:
       - name: Generate PDF
         uses: docker://pandoc/latex:2.9
         with:
-          args: "resume.md -o resume.pdf --pdf-engine=xelatex --from markdown+emoji"
+          args: "resume.md -o resume.pdf --pdf-engine=xelatex -M emoji=twemoji"
       - name: Commit
         run: |
           git config --local user.name Kireyin
