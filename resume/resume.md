@@ -77,3 +77,5 @@ Remote work allows for more efficiency and a better work/life balance, consider 
 ## Contact me
 [LinkedIn](https://www.linkedin.com/in/kireyin/)
 [Twitter](https://twitter.com/Kireyin)
+abrispot@icloud.com
+06 33 95 01 46
