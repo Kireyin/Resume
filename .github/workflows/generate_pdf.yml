@@ -22,7 +22,7 @@ jobs:
         with:
           args: |
             -V papersize:a4paper
-            -V documentclass: book
+            CJKmainfont="HiraginoSans-W4"
             resume.md
             -o resume.pdf
             --pdf-engine=xelatex"
