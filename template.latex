@@ -1,6 +1,2 @@
-\documentclass[12pt]{article}
-\usepackage{xeCJK}% use Latin font whenever possible
-\usepackage{fontspec}% set Chinese fonts, as follows
-\setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
-\setCJKsansfont[BoldFont=STHeiti]{STXihei}
-\setCJKmonofont{STFangsong}
+\documentclass{article}
+\usepackage[UTF8]{ctex}
