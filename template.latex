@@ -1,2 +1,20 @@
-\documentclass{article}
-\usepackage[UTF8]{ctex}
+\documentclass[12pt, a4paper]{article}
+\usepackage{fontspec}
+\usepackage[slantfont, boldfont]{xeCJK}
+
+% set up English font
+\setmainfont{Microsoft YaHei}
+\setsansfont{Comic Sans MS}
+\setmonofont{Courier New}
+
+% set up Chinese font, the font must be valid on your system
+\setCJKmainfont{Microsoft YaHei}
+\setCJKmonofont{Source Code Pro}
+\setCJKsansfont{YouYuan}
+
+% correct line break for chinese
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\begin{document}
+\end{document}
