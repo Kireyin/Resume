@@ -13,7 +13,7 @@
 - Member of the companie's CSE, and working through that CoVid19 crisis was no walk in the park 😿
 - And now, well, now I work on the WebApp as a ReactJS developer, it's fun but not as fun as making good Mobile Applications
  
-### RotorMatch - 2016->2017 ([learn more](https://www.rotormatch.com/discover))
+### RotorMatch - 2016->2017 ([learn more](https://www.rotormatch.com))
 - Co-Founder, and all the non tech thing that came with it
 - Drone racing event organisation
 - Race timing system developement
