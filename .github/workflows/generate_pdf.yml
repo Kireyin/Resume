@@ -20,7 +20,7 @@ jobs:
       - name: Generate PDF
         uses: docker://pandoc/core:2.9
         with:
-          args: |>
+          args: |
             -f markdown
             -t pdf
             resume/resume.md
