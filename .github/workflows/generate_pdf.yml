@@ -20,7 +20,7 @@ jobs:
       - name: Generate PDF
         uses: docker://pandoc/latex:2.9
         with:
-          args: --variable papersize:a4paper --variable mainfont:Arial resume.md -o resume.pdf --pdf-engine=xelatex
+          args: --variable papersize:a4paper --variable mainfont:fonts/SF-Compact-Text-Bold.otf resume.md -o resume.pdf --pdf-engine=xelatex
       - name: Commit
         run: |
           git config --local user.name Kireyin
