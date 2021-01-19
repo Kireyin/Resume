@@ -1,10 +1,6 @@
-\title{Alexandre Brispot - Resume}
-\author{
-  Alexandre Brispot
-}
-\date{\today}
-
-\documentclass[12pt]{ctexart}
+\documentclass[12pt, a4paper]{article}
+\usepackage{fontspec}
+\usepackage[slantfont, boldfont]{xeCJK}
 
 \begin{document}
 \end{document}
