@@ -3,12 +3,12 @@
 \usepackage[slantfont, boldfont]{xeCJK}
 
 % set up English font
-\setmainfont{Microsoft YaHei}
+\setmainfont{Arial}
 \setsansfont{Comic Sans MS}
 \setmonofont{Courier New}
 
 % set up Chinese font, the font must be valid on your system
-\setCJKmainfont{Microsoft YaHei}
+\setCJKmainfont{Arial}
 \setCJKmonofont{Source Code Pro}
 \setCJKsansfont{YouYuan}
 
