@@ -20,7 +20,7 @@ jobs:
       - name: Generate PDF
         uses: docker://pandoc/latex:2.9
         with:
-          args: "resume.md -o resume.pdf --pdf-engine=xelatex -V 'mainfont:fonts/SF-Compact-REgular.otf CJKmainfont:fonts/Songti.ttc"
+          args: "resume.md -o resume.pdf --pdf-engine=xelatex -V 'mainfont:fonts/Songti.ttc"
       - name: Commit
         run: |
           git config --local user.name Kireyin
