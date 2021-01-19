@@ -20,7 +20,6 @@ $endif$
     \usepackage{xltxtra,xunicode}
   \fi
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \setromanfont{TeX Gyre Pagella}
   \newcommand{\euro}{€}
 $if(mainfont)$
     \setmainfont{$mainfont$}
