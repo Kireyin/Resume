@@ -20,7 +20,7 @@ jobs:
       - name: Generate PDF
         uses: docker://pandoc/latex:2.9
         with:
-          args: headers/header.yaml resume.md -o resume.pdf --pdf-engine=xelatex -s
+          args: headers/header.yaml resume.md -o resume.pdf --pdf-engine=xelatex -s | ls -l
       - name: Commit
         run: |
           git config --local user.name Kireyin
