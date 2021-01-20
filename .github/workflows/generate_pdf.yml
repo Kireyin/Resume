@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
-      - name: test
-        run: ls -l headers/
       - name: Generate PDF
         uses: docker://pandoc/latex:2.9
         with:
