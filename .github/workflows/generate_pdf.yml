@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install CJK support
+        uses: docker://pandoc/latex:latest
+        with:
+          entrypoint: tlmgr
+          args: install xecjk
       - name: Generate PDF
         uses: docker://pandoc/latex:latest
         with:
