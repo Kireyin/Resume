@@ -9,18 +9,15 @@ on:
 jobs:
   generatePDFResume:
     runs-on: ubuntu-latest
+    container:
+      image: pandoc/latex:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install CJK support
-        uses: docker://pandoc/latex:latest
-        with:
-          entrypoint: tlmgr
-          args: install xecjk
+        run: tlmgr install xecjk
       - name: Generate PDF
-        uses: docker://pandoc/latex:latest
-        with:
-          args: resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:"a4" --variable geometry:"margin=1in" --variable mainfont:"SF-Compact-Text-Regular.otf" --variable CJKmainfont:"Songti.ttc"
+        run: pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:"a4" --variable geometry:"margin=1in" --variable mainfont:"SF-Compact-Text-Regular.otf" --variable CJKmainfont:"Songti.ttc"
       - name: Commit
         run: |
           git config --local user.name Kireyin
