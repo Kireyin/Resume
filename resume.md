@@ -7,23 +7,23 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 ### DataDome - Senior Mobile Software Engineer (iOS, Android, React Native, Flutter, KMM) - Sept 2022->Present
 Amiens, Hauts-de-France, France
 
-- Leading a team of 3 mobile developers, owning the full lifecycle of 14 SDKs across iOS, Android, React Native, Flutter, and KMM for DataDome's bot protection platform, used by clients such as TripAdvisor, SoundCloud, and The New York Times
+- Lead a team of 3 mobile developers, owning the full lifecycle of 14 SDKs across iOS, Android, React Native, Flutter, and KMM for DataDome's bot protection platform, used by clients such as TripAdvisor, SoundCloud, and The New York Times
 - Architect and maintain the iOS SDK in Swift (+ others in their respective technologies), integrated by enterprise clients for real-time bot and fraud detection
 - Reduced customer support tickets by 50% through improved SDK documentation, simpler APIs, and comprehensive unit and E2E test coverage
 - Drive code reviews, technical decisions, and release planning for the mobile SDK team
 - Implement CI/CD pipelines ensuring reliable delivery across all platforms
 
 ### SightCall - Senior iOS Engineer - March 2021->Sept 2022
-Boulogne-Billancourt, Ile-de-France, France
+Boulogne-Billancourt, Île-de-France, France
 
 - Developed the iOS SDK for SightCall's AR-powered remote visual assistance platform, used by enterprise clients such as Sony, Ford, and GE Healthcare
 - Built real-time AR annotation features with ARKit, allowing users to place 3D markers, drawings, and measurements on live video streams
-- Integrated CoreML for on-device object detection and annotation during live video sessions
-- Migrated legacy Objective-C codebase to Swift, modernizing the SDK architecture
+- Integrated Core ML for on-device object detection and annotation during live video sessions
+- Migrated the legacy Objective-C codebase to Swift, modernizing the SDK architecture
 - Built CI/CD pipelines with Bitrise, automating the release process
 
 ### Mention - iOS Engineer - Sept 2015->March 2021
-Region de Paris, France
+Région de Paris, France
 
 - Sole iOS developer responsible for the full Mention iOS application
 - Led complete migration from Objective-C to Swift, improving code maintainability and developer velocity
@@ -33,28 +33,28 @@ Region de Paris, France
 - Recruited the Android developer, designed Kotlin technical challenges, and mentored them on mobile best practices and architecture
 
 ### RotorMatch - Co-Founder && Software Engineer (part-time) - Feb 2016->Jan 2020
-Region de Paris, France
+Région de Paris, France
 
 - Co-founded a drone racing event technology company
-- Built a race timing system: embedded system for captation, Swift app for data reading and backend sync (custom UDP library), web app for race control center
-- Live streaming to multiple platforms including our own RotorTV
+- Built a race timing system: an embedded system for signal capture, a Swift app for data reading and backend sync (custom UDP library), and a web app for the race control center
+- Live-streamed to multiple platforms including our own RotorTV
 - Event planning platform, ticket booking platform
 - NFC/RFID integration and reverse engineering of custom protocols
 
 ## Education
 
 ### EPITECH - European Institute of Technology
-Master's degree, Software engineering (2010-2015)
+Master's degree, Software Engineering (2010-2015)
 
 ### 北京交通大学 (Beijing Jiaotong University)
-M1, Software engineering (2013-2014)
+M1, Software Engineering (2013-2014)
 
 ### HEC Paris
-Digital Innovation for Business Certificate, e-commerce - Management - Lean Startup (2013)
+Digital Innovation for Business Certificate, E-commerce - Management - Lean Startup (2013)
 
 ## Skills
 
-- Swift, Objective-C, iOS, SwiftUI, UIKit, ARKit, CoreML
+- Swift, Objective-C, iOS, SwiftUI, UIKit, ARKit, Core ML
 - SDK Development, Technical Documentation
 - Android, Flutter, React Native, KMM
 - CI/CD, Team Leadership, Mentoring
