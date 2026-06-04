@@ -1,34 +1,61 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Generate PDF
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: write
+
 jobs:
   generatePDFResume:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
-      - name: Generate PDF
-        uses: docker://pandoc/latex:2.9
+        uses: actions/checkout@v4
         with:
-          args: resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:"a4" --variable geometry:"margin=1in" --variable mainfont:"SF-Compact-Text-Regular.otf" --variable CJKmainfont:"Songti.ttc"
+          # PR head branch on pull_request; empty on push -> default ref (the pushed branch, e.g. main)
+          ref: ${{ github.head_ref }}
+
+      - name: Generate PDF
+        run: |
+          docker run --rm \
+            --entrypoint /bin/sh \
+            -v "${{ github.workspace }}:/data" \
+            -w /data \
+            pandoc/latex:latest \
+            -c '
+          set -e
+          # tlmgr picks a random CTAN mirror by default; a dead/slow one can hang or fail
+          # the build (it has no xeCJK preinstalled). Pin known-good mirrors and fall back.
+          installed=
+          for repo in \
+            https://ctan.math.washington.edu/tex-archive/systems/texlive/tlnet \
+            https://ftp.tu-chemnitz.de/pub/tex/systems/texlive/tlnet \
+            https://ctan.math.illinois.edu/systems/texlive/tlnet \
+            https://mirror.ctan.org/systems/texlive/tlnet ; do
+            echo "Trying tlmgr repository: $repo"
+            if tlmgr --repository "$repo" install xecjk; then installed=1; break; fi
+          done
+          [ -n "$installed" ] || { echo "ERROR: tlmgr install xecjk failed on all mirrors"; exit 1; }
+          pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s \
+            --variable papersize:a4 --variable geometry:margin=1in \
+            --variable mainfont:SF-Compact-Text-Regular.otf \
+            --variable CJKmainfont:Songti.ttc
+          '
+
       - name: Commit
         run: |
           git config --local user.name Kireyin
           git config --local user.email kireyin@users.noreply.github.com
-          git add .
-          git commit -m "Generate PDF" -a
+          git add resume.pdf
+          git commit -m "Generate PDF" || echo "No changes to commit"
+
       - name: Push
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          # PR: source branch (github.head_ref). Push: empty -> github.ref_name (main).
+          branch: ${{ github.head_ref || github.ref_name }}
