@@ -6,26 +6,38 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   generatePDFResume:
     runs-on: ubuntu-latest
-    container:
-      image: pandoc/latex:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install CJK support
-        run: tlmgr install xecjk
+        with:
+          # PR head branch on pull_request; empty on push -> default ref (the pushed branch, e.g. main)
+          ref: ${{ github.head_ref }}
+
       - name: Generate PDF
-        run: pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:"a4" --variable geometry:"margin=1in" --variable mainfont:"SF-Compact-Text-Regular.otf" --variable CJKmainfont:"Songti.ttc"
+        run: |
+          docker run --rm \
+            --entrypoint /bin/sh \
+            -v "${{ github.workspace }}:/data" \
+            -w /data \
+            pandoc/latex:latest \
+            -c 'tlmgr install xecjk && pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:a4 --variable geometry:margin=1in --variable mainfont:SF-Compact-Text-Regular.otf --variable CJKmainfont:Songti.ttc'
+
       - name: Commit
         run: |
           git config --local user.name Kireyin
           git config --local user.email kireyin@users.noreply.github.com
-          git add .
-          git commit -m "Generate PDF" -a || echo "No changes to commit"
+          git add resume.pdf
+          git commit -m "Generate PDF" || echo "No changes to commit"
+
       - name: Push
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          # PR: source branch (github.head_ref). Push: empty -> github.ref_name (main).
+          branch: ${{ github.head_ref || github.ref_name }}
