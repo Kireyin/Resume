@@ -42,7 +42,8 @@ jobs:
           done
           [ -n "$installed" ] || { echo "ERROR: tlmgr install failed on all mirrors"; exit 1; }
           # -f markdown-smart: disable smart quotes so apostrophes stay straight
-          # (') instead of curly (’), which SF Compact renders with a wide gap.
+          # rather than curly, which SF Compact renders with a wide gap.
+          # NB: no apostrophe chars in these comments; they sit inside docker -c quotes.
           pandoc -f markdown-smart resume.md -o resume.pdf --pdf-engine=xelatex -s \
             --variable papersize:a4 --variable geometry:margin=1in \
             --variable mainfont:SF-Compact-Text-Regular.otf \
