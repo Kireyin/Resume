@@ -67,7 +67,7 @@ header-includes: |
 ```{=latex}
 \resumeheader
   {Alexandre Brispot}
-  {Senior iOS Engineer · iOS · Cross-Platform SDK}
+  {Senior iOS Engineer | Swift | 10+ years mobile experience | Epitech}
   {\href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
 ```
 
