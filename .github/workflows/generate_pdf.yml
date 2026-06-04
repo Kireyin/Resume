@@ -29,7 +29,10 @@ jobs:
             -c '
           set -e
           # tlmgr picks a random CTAN mirror by default; a dead/slow one can hang or fail
-          # the build (it has no xeCJK preinstalled). Pin known-good mirrors and fall back.
+          # the build (these arent preinstalled). Pin known-good mirrors and fall back.
+          # xecjk -> CJK glyphs; titlesec/enumitem -> resume section + list styling;
+          # needspace -> keep entries from splitting across pages;
+          # fancyhdr/lastpage -> page footer with "page X of Y".
           installed=
           for repo in \
             https://ctan.math.washington.edu/tex-archive/systems/texlive/tlnet \
@@ -37,10 +40,13 @@ jobs:
             https://ctan.math.illinois.edu/systems/texlive/tlnet \
             https://mirror.ctan.org/systems/texlive/tlnet ; do
             echo "Trying tlmgr repository: $repo"
-            if tlmgr --repository "$repo" install xecjk; then installed=1; break; fi
+            if tlmgr --repository "$repo" install xecjk titlesec enumitem needspace fancyhdr lastpage; then installed=1; break; fi
           done
-          [ -n "$installed" ] || { echo "ERROR: tlmgr install xecjk failed on all mirrors"; exit 1; }
-          pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s \
+          [ -n "$installed" ] || { echo "ERROR: tlmgr install failed on all mirrors"; exit 1; }
+          # -f markdown-smart: disable smart quotes so apostrophes stay straight
+          # rather than curly, which SF Compact renders with a wide gap.
+          # NB: no apostrophe chars in these comments; they sit inside docker -c quotes.
+          pandoc -f markdown-smart resume.md -o resume.pdf --pdf-engine=xelatex -s \
             --variable papersize:a4 --variable geometry:margin=1in \
             --variable mainfont:SF-Compact-Text-Regular.otf \
             --variable CJKmainfont:Songti.ttc
