@@ -32,7 +32,7 @@ header-includes: |
       {\large #2}\\[5pt]
       {\small #3}
     \end{center}
-    \vspace{0.4ex}}
+    \vspace{2.5ex}}
 
   % ---- lists: accent bullets, tight, indented -------------------------------
   \usepackage{enumitem}
