@@ -41,7 +41,9 @@ jobs:
             if tlmgr --repository "$repo" install xecjk titlesec enumitem; then installed=1; break; fi
           done
           [ -n "$installed" ] || { echo "ERROR: tlmgr install failed on all mirrors"; exit 1; }
-          pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s \
+          # -f markdown-smart: disable smart quotes so apostrophes stay straight
+          # (') instead of curly (’), which SF Compact renders with a wide gap.
+          pandoc -f markdown-smart resume.md -o resume.pdf --pdf-engine=xelatex -s \
             --variable papersize:a4 --variable geometry:margin=1in \
             --variable mainfont:SF-Compact-Text-Regular.otf \
             --variable CJKmainfont:Songti.ttc
