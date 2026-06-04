@@ -41,6 +41,7 @@ header-includes: |
     \setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}}}
 
   % ---- misc -----------------------------------------------------------------
+  \usepackage{needspace}   % keep an entry from splitting across a page break
   \setcounter{secnumdepth}{0}
   \setlength{\parindent}{0pt}
   \AtBeginDocument{\hypersetup{colorlinks=true, allcolors=accent}}
@@ -88,6 +89,10 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 - Built a custom GraphQL implementation to avoid Apollo's heavy code generation, alongside REST APIs and real-time WebSocket features
 - Reduced app crash rate by 30% through systematic debugging, memory management improvements, and crash reporting analysis
 - Recruited the Android developer, designed Kotlin technical challenges, and mentored them on mobile best practices and architecture
+
+```{=latex}
+\needspace{9\baselineskip}
+```
 
 ### RotorMatch - Co-Founder & Software Engineer (part-time) \hfill \datestamp{Feb 2016 - Jan 2020}
 *Région de Paris, France*
