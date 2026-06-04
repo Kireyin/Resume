@@ -58,7 +58,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 
 ## Experience
 
-### DataDome — Senior Mobile Software Engineer \hfill \datestamp{Sept 2022 – Present}
+### DataDome - Senior Mobile Software Engineer \hfill \datestamp{Sept 2022 - Present}
 *Amiens, Hauts-de-France, France*
 
 - Lead a team of 3 mobile developers, owning the full lifecycle of 14 SDKs across iOS, Android, React Native, Flutter, and KMM for DataDome's bot protection platform, used by clients such as TripAdvisor, SoundCloud, and The New York Times
@@ -67,7 +67,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 - Drive code reviews, technical decisions, and release planning for the mobile SDK team
 - Implement CI/CD pipelines ensuring reliable delivery across all platforms
 
-### SightCall — Senior iOS Engineer \hfill \datestamp{March 2021 – Sept 2022}
+### SightCall - Senior iOS Engineer \hfill \datestamp{March 2021 - Sept 2022}
 *Boulogne-Billancourt, Île-de-France, France*
 
 - Developed the iOS SDK for SightCall's AR-powered remote visual assistance platform, used by enterprise clients such as Sony, Ford, and GE Healthcare
@@ -76,7 +76,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 - Migrated the legacy Objective-C codebase to Swift, modernizing the SDK architecture
 - Built CI/CD pipelines with Bitrise, automating the release process
 
-### Mention — iOS Engineer \hfill \datestamp{Sept 2015 – March 2021}
+### Mention - iOS Engineer \hfill \datestamp{Sept 2015 - March 2021}
 *Région de Paris, France*
 
 - Sole iOS developer responsible for the full Mention iOS application
@@ -86,7 +86,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 - Reduced app crash rate by 30% through systematic debugging, memory management improvements, and crash reporting analysis
 - Recruited the Android developer, designed Kotlin technical challenges, and mentored them on mobile best practices and architecture
 
-### RotorMatch — Co-Founder & Software Engineer (part-time) \hfill \datestamp{Feb 2016 – Jan 2020}
+### RotorMatch - Co-Founder & Software Engineer (part-time) \hfill \datestamp{Feb 2016 - Jan 2020}
 *Région de Paris, France*
 
 - Co-founded a drone racing event technology company
@@ -97,14 +97,14 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 
 ## Education
 
-### EPITECH — European Institute of Technology \hfill \datestamp{2010 – 2015}
+### EPITECH - European Institute of Technology \hfill \datestamp{2010 - 2015}
 Master's degree, Software Engineering
 
-### 北京交通大学 (Beijing Jiaotong University) \hfill \datestamp{2013 – 2014}
+### 北京交通大学 (Beijing Jiaotong University) \hfill \datestamp{2013 - 2014}
 M1, Software Engineering
 
 ### HEC Paris \hfill \datestamp{2013}
-Digital Innovation for Business Certificate — E-commerce · Management · Lean Startup
+Digital Innovation for Business Certificate - E-commerce · Management · Lean Startup
 
 ## Skills
 
