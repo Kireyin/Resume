@@ -26,7 +26,25 @@ jobs:
             -v "${{ github.workspace }}:/data" \
             -w /data \
             pandoc/latex:latest \
-            -c 'tlmgr install xecjk && pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s --variable papersize:a4 --variable geometry:margin=1in --variable mainfont:SF-Compact-Text-Regular.otf --variable CJKmainfont:Songti.ttc'
+            -c '
+          set -e
+          # tlmgr picks a random CTAN mirror by default; a dead/slow one can hang or fail
+          # the build (it has no xeCJK preinstalled). Pin known-good mirrors and fall back.
+          installed=
+          for repo in \
+            https://ctan.math.washington.edu/tex-archive/systems/texlive/tlnet \
+            https://ftp.tu-chemnitz.de/pub/tex/systems/texlive/tlnet \
+            https://ctan.math.illinois.edu/systems/texlive/tlnet \
+            https://mirror.ctan.org/systems/texlive/tlnet ; do
+            echo "Trying tlmgr repository: $repo"
+            if tlmgr --repository "$repo" install xecjk; then installed=1; break; fi
+          done
+          [ -n "$installed" ] || { echo "ERROR: tlmgr install xecjk failed on all mirrors"; exit 1; }
+          pandoc resume.md -o resume.pdf --pdf-engine=xelatex -s \
+            --variable papersize:a4 --variable geometry:margin=1in \
+            --variable mainfont:SF-Compact-Text-Regular.otf \
+            --variable CJKmainfont:Songti.ttc
+          '
 
       - name: Commit
         run: |
