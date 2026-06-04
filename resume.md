@@ -40,6 +40,22 @@ header-includes: |
   \AtBeginDocument{\renewcommand{\tightlist}{%
     \setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}}}
 
+  % ---- page footer: name/title/linkedin reminder + "page X of Y" -------------
+  \usepackage{lastpage}
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}                          % clear default header & footer
+  \renewcommand{\headrulewidth}{0pt}  % no header rule
+  \renewcommand{\footrulewidth}{0.4pt}
+  \makeatletter                       % colour the footer rule to match section rules
+  \renewcommand{\footrule}{%
+    \vskip-\footruleskip\vskip-\footrulewidth
+    {\color{accent!35}\hrule\@width\headwidth\@height\footrulewidth}%
+    \vskip\footruleskip}
+  \makeatother
+  \fancyfoot[L]{\footnotesize\color{black!55}Alexandre Brispot - Senior Mobile Engineer · \href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
+  \fancyfoot[R]{\footnotesize\color{black!55}\thepage\ of \pageref{LastPage}}
+
   % ---- misc -----------------------------------------------------------------
   \usepackage{needspace}   % keep an entry from splitting across a page break
   \setcounter{secnumdepth}{0}
