@@ -54,7 +54,7 @@ header-includes: |
   {\href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
 ```
 
-Senior Mobile Engineer leading cross-platform SDK development at DataDome, serving hundreds of millions of devices across iOS, Android, React Native, Flutter, and KMM. 10+ years of experience shipping production mobile apps, with deep expertise in Swift and iOS SDK architecture. Open to Senior/Lead iOS roles, remote preferred.
+\hspace*{1.5em}Senior Mobile Engineer leading cross-platform SDK development at DataDome, serving hundreds of millions of devices across iOS, Android, React Native, Flutter, and KMM. 10+ years of experience shipping production mobile apps, with deep expertise in Swift and iOS SDK architecture. Open to Senior/Lead iOS roles, remote preferred.
 
 ## Experience
 
