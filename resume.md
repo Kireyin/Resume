@@ -53,7 +53,7 @@ header-includes: |
     {\color{accent!35}\hrule\@width\headwidth\@height\footrulewidth}%
     \vskip\footruleskip}
   \makeatother
-  \fancyfoot[L]{\footnotesize\color{black!55}Alexandre Brispot - Senior Mobile Engineer · \href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
+  \fancyfoot[L]{\footnotesize\color{black!55}Alexandre Brispot - Senior iOS Engineer · \href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
   \fancyfoot[R]{\footnotesize\color{black!55}\thepage\ of \pageref{LastPage}}
 
   % ---- misc -----------------------------------------------------------------
@@ -67,18 +67,18 @@ header-includes: |
 ```{=latex}
 \resumeheader
   {Alexandre Brispot}
-  {Senior Mobile Engineer · iOS · Cross-Platform SDK}
+  {Senior iOS Engineer · iOS · Cross-Platform SDK}
   {\href{https://www.linkedin.com/in/kireyin/}{linkedin.com/in/kireyin}}
 ```
 
 ```{=latex}
 {\setlength{\parindent}{1.5em}%
-Senior Mobile Engineer leading cross-platform SDK development at DataDome, serving hundreds of millions of devices across iOS, Android, React Native, Flutter, and KMM. 10+ years of experience shipping production mobile apps, with deep expertise in Swift and iOS SDK architecture. Open to Senior/Lead iOS roles, remote preferred.\par}
+Senior iOS Engineer leading cross-platform SDK development at DataDome, serving hundreds of millions of devices across iOS, Android, React Native, Flutter, and KMM. 10+ years of experience shipping production mobile apps, with deep expertise in Swift and iOS SDK architecture. Open to Senior/Lead iOS roles, remote preferred.\par}
 ```
 
 ## Experience
 
-### DataDome - Senior Mobile Software Engineer \hfill \datestamp{Sept 2022 - Present}
+### DataDome - Senior iOS Software Engineer \hfill \datestamp{Sept 2022 - Present}
 *Amiens, Hauts-de-France, France*
 
 - Lead a team of 3 mobile developers, owning the full lifecycle of 14 SDKs across iOS, Android, React Native, Flutter, and KMM for DataDome's bot protection platform, used by clients such as TripAdvisor, SoundCloud, and The New York Times
@@ -97,7 +97,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 - Built CI/CD pipelines with Bitrise, automating the release process
 
 ### Mention - iOS Engineer \hfill \datestamp{Sept 2015 - March 2021}
-*Région de Paris, France*
+*Paris, Île-de-France, France*
 
 - Sole iOS developer responsible for the full Mention iOS application
 - Led complete migration from Objective-C to Swift, improving code maintainability and developer velocity
@@ -111,7 +111,7 @@ Senior Mobile Engineer leading cross-platform SDK development at DataDome, servi
 ```
 
 ### RotorMatch - Co-Founder & Software Engineer (part-time) \hfill \datestamp{Feb 2016 - Jan 2020}
-*Région de Paris, France*
+*Paris, Île-de-France, France*
 
 - Co-founded a drone racing event technology company
 - Built a race timing system: an embedded system for signal capture, a Swift app for data reading and backend sync (custom UDP library), and a web app for the race control center
