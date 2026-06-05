@@ -46,10 +46,11 @@ jobs:
           # -f markdown-smart: disable smart quotes so apostrophes stay straight
           # rather than curly, which SF Compact renders with a wide gap.
           # NB: no apostrophe chars in these comments; they sit inside docker -c quotes.
+          # mainfont is set in resume.md header-includes (\setmainfont ... Path=fonts/),
+          # so no -V mainfont here. CJK font is resolved from fonts/ via CJKoptions:Path.
           pandoc -f markdown-smart resume.md -o resume.pdf --pdf-engine=xelatex -s \
             --variable papersize:a4 --variable geometry:margin=1in \
-            --variable mainfont:SF-Compact-Text-Regular.otf \
-            --variable CJKmainfont:Songti.ttc
+            --variable CJKmainfont:Songti.ttc --variable CJKoptions:Path=fonts/
           '
 
       - name: Commit
