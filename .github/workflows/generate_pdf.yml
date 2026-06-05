@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Build resume
 
 on:
   push:
@@ -7,7 +7,9 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  contents: write   # commit the regenerated PDFs
+  pages: write      # publishWeb (only used when ENABLE_PAGES=true)
+  id-token: write   # publishWeb (only used when ENABLE_PAGES=true)
 
 jobs:
   generatePDFResume:
@@ -19,7 +21,16 @@ jobs:
           # PR head branch on pull_request; empty on push -> default ref (the pushed branch, e.g. main)
           ref: ${{ github.head_ref }}
 
-      - name: Generate PDF
+      - name: Generate per-language markdown
+        # build_resume.py merges templates/styling.tex with site/content/<lang>.json into
+        # the markdown shape the Pandoc pipeline already consumes. python3 ships on the runner.
+        run: |
+          set -e
+          python3 build_resume.py en    > resume.en.md
+          python3 build_resume.py fr    > resume.fr.md
+          python3 build_resume.py zh-TW > resume.zh-TW.md
+
+      - name: Generate PDFs
         run: |
           docker run --rm \
             --entrypoint /bin/sh \
@@ -46,18 +57,28 @@ jobs:
           # -f markdown-smart: disable smart quotes so apostrophes stay straight
           # rather than curly, which SF Compact renders with a wide gap.
           # NB: no apostrophe chars in these comments; they sit inside docker -c quotes.
-          # mainfont is set in resume.md header-includes (\setmainfont ... Path=fonts/),
+          # mainfont is set via templates/styling.tex (\setmainfont ... Path=fonts/),
           # so no -V mainfont here. CJK font is resolved from fonts/ via CJKoptions:Path.
-          pandoc -f markdown-smart resume.md -o resume.pdf --pdf-engine=xelatex -s \
-            --variable papersize:a4 --variable geometry:margin=1in \
-            --variable CJKmainfont:Songti.ttc --variable CJKoptions:Path=fonts/
+          # $1 input md, $2 output pdf, $3 CJK main font (loaded from fonts/ via Path).
+          # en/fr carry only simplified glyphs (Beijing university name) -> Songti.ttc is fine.
+          # zh-TW is Traditional; Songti.ttc face 0 lacks ~117 of those glyphs, so it uses
+          # Songti-TC.ttf (Songti TC Regular, extracted from Songti.ttc, full coverage).
+          build() {
+            echo "Building $2 from $1 with CJK font $3"
+            pandoc -f markdown-smart "$1" -o "$2" --pdf-engine=xelatex -s \
+              --variable papersize:a4 --variable geometry:margin=1in \
+              --variable CJKmainfont:"$3" --variable CJKoptions:Path=fonts/
+          }
+          build resume.en.md    resume.pdf       Songti.ttc
+          build resume.fr.md    resume.fr.pdf    Songti.ttc
+          build resume.zh-TW.md resume.zh-tw.pdf Songti-TC.ttf
           '
 
       - name: Commit
         run: |
           git config --local user.name Kireyin
           git config --local user.email kireyin@users.noreply.github.com
-          git add resume.pdf
+          git add resume.pdf resume.fr.pdf resume.zh-tw.pdf
           git commit -m "Generate PDF" || echo "No changes to commit"
 
       - name: Push
@@ -66,3 +87,41 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # PR: source branch (github.head_ref). Push: empty -> github.ref_name (main).
           branch: ${{ github.head_ref || github.ref_name }}
+
+      - name: Upload PDFs for the web job
+        if: github.event_name == 'push' && vars.ENABLE_PAGES == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: |
+            resume.pdf
+            resume.fr.pdf
+            resume.zh-tw.pdf
+
+  # Publishes the static site/ to GitHub Pages. Opt-in: this job is skipped unless the
+  # repository variable ENABLE_PAGES is set to "true" (Settings -> Secrets and variables
+  # -> Actions -> Variables). You must ALSO set Settings -> Pages -> Build and deployment
+  # -> Source = "GitHub Actions". To host elsewhere (Netlify/Vercel/...) instead, leave
+  # ENABLE_PAGES unset and point that host at the site/ directory.
+  publishWeb:
+    if: github.event_name == 'push' && vars.ENABLE_PAGES == 'true'
+    needs: generatePDFResume
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Bundle the freshly built PDFs into the site (so download links resolve)
+        uses: actions/download-artifact@v4
+        with:
+          name: resume-pdfs
+          path: site
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

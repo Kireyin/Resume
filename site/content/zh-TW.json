@@ -1,0 +1,100 @@
+{
+  "lang": "zh-TW",
+  "name": "Alexandre Brispot",
+  "tagline": "資深 iOS 工程師 | Swift | 10+ 年行動開發經驗 | Epitech",
+  "contact": {
+    "url": "https://www.linkedin.com/in/kireyin/",
+    "label": "linkedin.com/in/kireyin"
+  },
+  "summary": "資深 iOS 工程師，於 DataDome 主導跨平台 SDK 開發，服務涵蓋 iOS、Android、React Native、Flutter 與 KMM 的數億台裝置。擁有超過 10 年交付正式環境行動應用程式的經驗，並在 Swift 與 iOS SDK 架構方面具備深厚專業。對資深／主管級 iOS 職位持開放態度，偏好遠端工作。",
+  "footer_title": "資深 iOS 工程師",
+  "sections": {
+    "experience": "工作經歷",
+    "education": "學歷",
+    "skills": "專業技能",
+    "languages": "語言能力"
+  },
+  "experience": [
+    {
+      "company": "DataDome",
+      "title": "資深 iOS 軟體工程師",
+      "date": "2022年9月 - 至今",
+      "location": "Amiens, Hauts-de-France, France",
+      "bullets": [
+        "領導 3 人行動開發團隊，負責 DataDome 機器人防護平台上橫跨 iOS、Android、React Native、Flutter 與 KMM 共 14 個 SDK 的完整生命週期，客戶包括 TripAdvisor、SoundCloud 與 The New York Times",
+        "以 Swift 設計並維護 iOS SDK（其餘平台則以各自技術實作），供企業客戶整合以進行即時機器人與詐欺偵測",
+        "透過改善 SDK 文件、簡化 API 以及完整的單元測試與端對端測試覆蓋，將客戶支援工單減少 50%",
+        "主導行動 SDK 團隊的程式碼審查、技術決策與版本發布規劃",
+        "建置 CI/CD 流程，確保在所有平台上穩定可靠地交付"
+      ]
+    },
+    {
+      "company": "SightCall",
+      "title": "資深 iOS 工程師",
+      "date": "2021年3月 - 2022年9月",
+      "location": "Boulogne-Billancourt, Île-de-France, France",
+      "bullets": [
+        "開發 SightCall 以擴增實境為核心的遠端視覺協助平台 iOS SDK，供 Sony、Ford 與 GE Healthcare 等企業客戶使用",
+        "以 ARKit 建置即時 AR 標註功能，讓使用者可在即時視訊串流上放置 3D 標記、繪圖與測量",
+        "整合 Core ML，於即時視訊期間在裝置端進行物件偵測與標註",
+        "將既有的 Objective-C 程式碼遷移至 Swift，現代化 SDK 架構",
+        "以 Bitrise 建置 CI/CD 流程，自動化發布流程"
+      ]
+    },
+    {
+      "company": "Mention",
+      "title": "iOS 工程師",
+      "date": "2015年9月 - 2021年3月",
+      "location": "Paris, Île-de-France, France",
+      "bullets": [
+        "唯一的 iOS 開發者，負責整個 Mention iOS 應用程式",
+        "主導從 Objective-C 到 Swift 的完整遷移，提升程式碼可維護性與開發效率",
+        "將商業邏輯抽離為可重用的 SDK，分離前端與商業邏輯層，為未來的應用程式做準備",
+        "自行實作 GraphQL 以避免 Apollo 繁重的程式碼產生，並搭配 REST API 與即時 WebSocket 功能",
+        "透過系統化除錯、記憶體管理改善與當機報告分析，將應用程式當機率降低 30%",
+        "招募 Android 開發者，設計 Kotlin 技術測驗，並在行動開發最佳實務與架構上提供指導"
+      ]
+    },
+    {
+      "company": "RotorMatch",
+      "title": "共同創辦人暨軟體工程師（兼職）",
+      "date": "2016年2月 - 2020年1月",
+      "location": "Paris, Île-de-France, France",
+      "page_break_before": true,
+      "bullets": [
+        "共同創辦一家無人機競速賽事科技公司",
+        "建置賽事計時系統：用於訊號擷取的嵌入式系統、用於資料讀取與後端同步的 Swift 應用程式（自製 UDP 函式庫），以及賽事指揮中心的網頁應用程式",
+        "同步直播至多個平台，包括我們自有的 RotorTV",
+        "賽事規劃平台、票務預訂平台",
+        "NFC／RFID 整合與自訂協定的逆向工程"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "EPITECH - 歐洲科技學院",
+      "date": "2010 - 2015",
+      "detail": "碩士學位，軟體工程"
+    },
+    {
+      "institution": "北京交通大學 (Beijing Jiaotong University)",
+      "date": "2013 - 2014",
+      "detail": "碩士一年級，軟體工程"
+    },
+    {
+      "institution": "HEC 巴黎商學院",
+      "date": "2013",
+      "detail": "商業數位創新證書 - 電子商務 · 管理 · 精實創業"
+    }
+  ],
+  "skills": [
+    "Swift, Objective-C, iOS, SwiftUI, UIKit, ARKit, Core ML",
+    "SDK 開發、技術文件",
+    "Android, Flutter, React Native, KMM",
+    "CI/CD、團隊領導、技術指導"
+  ],
+  "spoken_languages": [
+    "法語（母語）",
+    "英語（專業工作能力）"
+  ]
+}

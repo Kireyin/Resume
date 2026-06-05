@@ -1,0 +1,60 @@
+% ---- colours --------------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F4E79}   % deep navy
+
+% ---- real font cuts (override CI's -V mainfont; header-includes wins) ------
+\setmainfont{SF-Compact-Text}[
+  Path = fonts/,
+  Extension = .otf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-RegularItalic ]
+
+% ---- section headers (## -> \subsection): uppercase, accent, rule below ----
+\usepackage{titlesec}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{accent}}{}{0em}{\MakeUppercase}
+  [{\color{accent!35}\titlerule[1pt]}]
+\titlespacing*{\subsection}{0pt}{2.2ex plus .3ex minus .2ex}{1.0ex}
+
+% ---- entry headers (### -> \subsubsection): bold left, date flush right -----
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{1.6ex plus .2ex}{0.3ex}
+\newcommand{\datestamp}[1]{{\normalfont\itshape\small\color{black!55}#1}}
+
+% ---- name / contact banner ------------------------------------------------
+\newcommand{\resumeheader}[3]{%
+  \begin{center}
+    {\fontsize{24}{28}\selectfont\bfseries\color{accent}#1}\\[3pt]
+    {\large #2}\\[5pt]
+    {\small #3}
+  \end{center}
+  \vspace{2.5ex}}
+
+% ---- lists: accent bullets, tight, indented -------------------------------
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.4em, topsep=2pt, label=\textcolor{accent}{\textbullet}}
+\AtBeginDocument{\renewcommand{\tightlist}{%
+  \setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}}}
+
+% ---- page footer: name/title/linkedin reminder + "page X of Y" -------------
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}                          % clear default header & footer
+\renewcommand{\headrulewidth}{0pt}  % no header rule
+\renewcommand{\footrulewidth}{0.4pt}
+\makeatletter                       % colour the footer rule to match section rules
+\renewcommand{\footrule}{%
+  \vskip-\footruleskip\vskip-\footrulewidth
+  {\color{accent!35}\hrule\@width\headwidth\@height\footrulewidth}%
+  \vskip\footruleskip}
+\makeatother
+\fancyfoot[L]{\footnotesize\color{black!55}@@NAME@@ - @@FOOTER_TITLE@@ · \href{@@CONTACT_URL@@}{@@CONTACT_LABEL@@}}
+\fancyfoot[R]{\footnotesize\color{black!55}\thepage\ of \pageref{LastPage}}
+
+% ---- misc -----------------------------------------------------------------
+\usepackage{needspace}   % keep an entry from splitting across a page break
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\AtBeginDocument{\hypersetup{colorlinks=true, allcolors=accent}}
