@@ -97,7 +97,7 @@ function render(d, lang) {
   contact.title = d.contact.label;   // keep the handle accessible (hover/SR) without widening the button
 
   const pdf = $("pdf-link");
-  pdf.textContent = d.ui.download_pdf;
+  $("pdf-label").textContent = d.ui.download_pdf;   // set the label only, so the icon survives
   pdf.href = PDF_FILE[lang];
 
   $("summary").textContent = d.summary;
