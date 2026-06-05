@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           # PR head branch on pull_request; empty on push -> default ref (the pushed branch, e.g. main)
           ref: ${{ github.head_ref }}
@@ -82,15 +82,14 @@ jobs:
           git commit -m "Generate PDF" || echo "No changes to commit"
 
       - name: Push
-        uses: ad-m/github-push-action@v0.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # PR: source branch (github.head_ref). Push: empty -> github.ref_name (main).
-          branch: ${{ github.head_ref || github.ref_name }}
+        # checkout persists credentials, so a native git push needs no extra action.
+        # PR: source branch (github.head_ref). Push: empty -> github.ref_name (main).
+        # Pushing with the default GITHUB_TOKEN does not retrigger the workflow.
+        run: git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
 
       - name: Upload PDFs for the web job
         if: github.event_name == 'push' && vars.ENABLE_PAGES == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: resume-pdfs
           path: |
@@ -112,16 +111,16 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Bundle the freshly built PDFs into the site (so download links resolve)
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: resume-pdfs
           path: site
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
