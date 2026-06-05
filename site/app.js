@@ -133,4 +133,39 @@ async function setLang(lang) {
   }
 }
 
+// ---- theme toggle (light <-> dark; defaults to the OS setting) -----------
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function savedTheme() {
+  const t = localStorage.getItem("theme");
+  return t === "light" || t === "dark" ? t : null; // null -> follow the OS
+}
+
+function currentTheme() {
+  return savedTheme() || (prefersDark.matches ? "dark" : "light");
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = $("theme-toggle");
+  if (btn) btn.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
+}
+
+function setupTheme() {
+  applyTheme(currentTheme());
+  const btn = $("theme-toggle");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next); // explicit choice; persists
+      applyTheme(next);
+    });
+  }
+  // Until the visitor makes a choice, keep following OS changes live.
+  prefersDark.addEventListener("change", () => {
+    if (!savedTheme()) applyTheme(currentTheme());
+  });
+}
+
+setupTheme();
 setLang(pickLang());
