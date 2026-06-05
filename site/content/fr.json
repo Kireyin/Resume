@@ -14,8 +14,12 @@
     "skills": "Compétences",
     "languages": "Langues"
   },
+  "ui": {
+    "download_pdf": "Télécharger le PDF"
+  },
   "experience": [
     {
+      "id": "datadome",
       "company": "DataDome",
       "title": "Ingénieur logiciel iOS Senior",
       "date": "Sept. 2022 - Présent",
@@ -29,6 +33,7 @@
       ]
     },
     {
+      "id": "sightcall",
       "company": "SightCall",
       "title": "Ingénieur iOS Senior",
       "date": "Mars 2021 - Sept. 2022",
@@ -42,6 +47,7 @@
       ]
     },
     {
+      "id": "mention",
       "company": "Mention",
       "title": "Ingénieur iOS",
       "date": "Sept. 2015 - Mars 2021",
@@ -56,32 +62,36 @@
       ]
     },
     {
+      "id": "rotormatch",
       "company": "RotorMatch",
       "title": "Co-fondateur & Ingénieur logiciel (temps partiel)",
       "date": "Févr. 2016 - Janv. 2020",
       "location": "Paris, Île-de-France, France",
-      "page_break_before": true,
       "bullets": [
         "Cofondé une entreprise de technologie pour les événements de course de drones",
         "Conçu un système de chronométrage de course : un système embarqué pour la capture du signal, une application Swift pour la lecture des données et la synchronisation backend (bibliothèque UDP sur mesure), et une application web pour le centre de contrôle de la course",
         "Diffusé en direct sur plusieurs plateformes, dont notre propre RotorTV",
         "Plateforme d'organisation d'événements, plateforme de billetterie",
         "Intégration NFC/RFID et rétro-ingénierie de protocoles propriétaires"
-      ]
+      ],
+      "page_break_before": true
     }
   ],
   "education": [
     {
+      "id": "epitech",
       "institution": "EPITECH - Institut Européen de Technologie",
       "date": "2010 - 2015",
       "detail": "Diplôme de Master, Génie logiciel"
     },
     {
+      "id": "bjtu",
       "institution": "北京交通大学 (Université Jiaotong de Pékin)",
       "date": "2013 - 2014",
       "detail": "M1, Génie logiciel"
     },
     {
+      "id": "hec",
       "institution": "HEC Paris",
       "date": "2013",
       "detail": "Certificat Innovation Numérique pour l'Entreprise - E-commerce · Management · Lean Startup"
