@@ -99,6 +99,7 @@ function render(d, lang) {
   const pdf = $("pdf-link");
   $("pdf-label").textContent = d.ui.download_pdf;   // set the label only, so the icon survives
   pdf.href = PDF_FILE[lang];
+  pdf.download = `${d.name.trim().replace(/\s+/g, "_")}-${PDF_FILE[lang]}`;   // saved-as name carries the person, not just "resume.pdf"
 
   $("summary").textContent = d.summary;
 
