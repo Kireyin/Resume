@@ -93,8 +93,8 @@ function render(d, lang) {
   $("tagline").textContent = d.tagline;
 
   const contact = $("contact");
-  contact.textContent = d.contact.label;
   contact.href = d.contact.url;
+  contact.title = d.contact.label;   // keep the handle accessible (hover/SR) without widening the button
 
   const pdf = $("pdf-link");
   pdf.textContent = d.ui.download_pdf;
