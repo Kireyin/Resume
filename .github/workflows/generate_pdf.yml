@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:   # republish on demand (Actions UI "Run workflow" / `gh workflow run`)
 
 permissions:
   contents: write   # commit the regenerated PDFs
@@ -94,7 +95,7 @@ jobs:
         run: git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
 
       - name: Upload PDFs for the web job
-        if: github.event_name == 'push' && vars.ENABLE_PAGES == 'true'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && vars.ENABLE_PAGES == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: resume-pdfs
@@ -109,7 +110,7 @@ jobs:
   # -> Source = "GitHub Actions". To host elsewhere (Netlify/Vercel/...) instead, leave
   # ENABLE_PAGES unset and point that host at the site/ directory.
   publishWeb:
-    if: github.event_name == 'push' && vars.ENABLE_PAGES == 'true'
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && vars.ENABLE_PAGES == 'true'
     needs: generatePDFResume
     runs-on: ubuntu-latest
     environment:
