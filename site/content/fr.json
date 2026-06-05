@@ -1,0 +1,100 @@
+{
+  "lang": "fr",
+  "name": "Alexandre Brispot",
+  "tagline": "Ingénieur iOS Senior | Swift | 10+ ans d'expérience mobile | Epitech",
+  "contact": {
+    "url": "https://www.linkedin.com/in/kireyin/",
+    "label": "linkedin.com/in/kireyin"
+  },
+  "summary": "Ingénieur iOS Senior pilotant le développement de SDK multiplateformes chez DataDome, au service de centaines de millions d'appareils sur iOS, Android, React Native, Flutter et KMM. Plus de 10 ans d'expérience dans la livraison d'applications mobiles en production, avec une expertise pointue en Swift et en architecture de SDK iOS. Ouvert aux postes Senior/Lead iOS, télétravail privilégié.",
+  "footer_title": "Ingénieur iOS Senior",
+  "sections": {
+    "experience": "Expérience",
+    "education": "Formation",
+    "skills": "Compétences",
+    "languages": "Langues"
+  },
+  "experience": [
+    {
+      "company": "DataDome",
+      "title": "Ingénieur logiciel iOS Senior",
+      "date": "Sept. 2022 - Présent",
+      "location": "Amiens, Hauts-de-France, France",
+      "bullets": [
+        "Dirige une équipe de 3 développeurs mobiles, en charge du cycle de vie complet de 14 SDK sur iOS, Android, React Native, Flutter et KMM pour la plateforme de protection anti-bot de DataDome, utilisée par des clients tels que TripAdvisor, SoundCloud et The New York Times",
+        "Conçois et maintiens le SDK iOS en Swift (et les autres dans leurs technologies respectives), intégré par des clients grands comptes pour la détection en temps réel des bots et de la fraude",
+        "Réduit de 50% les tickets de support client grâce à une meilleure documentation des SDK, des API simplifiées et une couverture complète de tests unitaires et E2E",
+        "Pilote les revues de code, les décisions techniques et la planification des versions pour l'équipe SDK mobile",
+        "Mets en place des pipelines CI/CD garantissant une livraison fiable sur toutes les plateformes"
+      ]
+    },
+    {
+      "company": "SightCall",
+      "title": "Ingénieur iOS Senior",
+      "date": "Mars 2021 - Sept. 2022",
+      "location": "Boulogne-Billancourt, Île-de-France, France",
+      "bullets": [
+        "Développé le SDK iOS de la plateforme d'assistance visuelle à distance en réalité augmentée de SightCall, utilisée par des clients grands comptes tels que Sony, Ford et GE Healthcare",
+        "Conçu des fonctionnalités d'annotation AR en temps réel avec ARKit, permettant de placer des repères 3D, des dessins et des mesures sur des flux vidéo en direct",
+        "Intégré Core ML pour la détection d'objets et l'annotation sur l'appareil pendant les sessions vidéo en direct",
+        "Migré le code historique Objective-C vers Swift, modernisant l'architecture du SDK",
+        "Mis en place des pipelines CI/CD avec Bitrise, automatisant le processus de publication"
+      ]
+    },
+    {
+      "company": "Mention",
+      "title": "Ingénieur iOS",
+      "date": "Sept. 2015 - Mars 2021",
+      "location": "Paris, Île-de-France, France",
+      "bullets": [
+        "Unique développeur iOS responsable de l'intégralité de l'application iOS Mention",
+        "Dirigé la migration complète d'Objective-C vers Swift, améliorant la maintenabilité du code et la vélocité de l'équipe",
+        "Extrait la logique métier dans un SDK réutilisable, séparant les couches front-end et métier en vue de futures applications",
+        "Développé une implémentation GraphQL sur mesure pour éviter la lourde génération de code d'Apollo, en complément d'API REST et de fonctionnalités WebSocket en temps réel",
+        "Réduit le taux de crash de l'application de 30% grâce à un débogage systématique, des améliorations de la gestion mémoire et l'analyse des rapports de crash",
+        "Recruté le développeur Android, conçu les tests techniques Kotlin et accompagné sa montée en compétences sur les bonnes pratiques et l'architecture mobiles"
+      ]
+    },
+    {
+      "company": "RotorMatch",
+      "title": "Co-fondateur & Ingénieur logiciel (temps partiel)",
+      "date": "Févr. 2016 - Janv. 2020",
+      "location": "Paris, Île-de-France, France",
+      "page_break_before": true,
+      "bullets": [
+        "Cofondé une entreprise de technologie pour les événements de course de drones",
+        "Conçu un système de chronométrage de course : un système embarqué pour la capture du signal, une application Swift pour la lecture des données et la synchronisation backend (bibliothèque UDP sur mesure), et une application web pour le centre de contrôle de la course",
+        "Diffusé en direct sur plusieurs plateformes, dont notre propre RotorTV",
+        "Plateforme d'organisation d'événements, plateforme de billetterie",
+        "Intégration NFC/RFID et rétro-ingénierie de protocoles propriétaires"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "EPITECH - Institut Européen de Technologie",
+      "date": "2010 - 2015",
+      "detail": "Diplôme de Master, Génie logiciel"
+    },
+    {
+      "institution": "北京交通大学 (Université Jiaotong de Pékin)",
+      "date": "2013 - 2014",
+      "detail": "M1, Génie logiciel"
+    },
+    {
+      "institution": "HEC Paris",
+      "date": "2013",
+      "detail": "Certificat Innovation Numérique pour l'Entreprise - E-commerce · Management · Lean Startup"
+    }
+  ],
+  "skills": [
+    "Swift, Objective-C, iOS, SwiftUI, UIKit, ARKit, Core ML",
+    "Développement de SDK, Documentation technique",
+    "Android, Flutter, React Native, KMM",
+    "CI/CD, Management d'équipe, Mentorat"
+  ],
+  "spoken_languages": [
+    "Français (Langue maternelle)",
+    "Anglais (Niveau professionnel)"
+  ]
+}

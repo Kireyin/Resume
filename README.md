@@ -1,6 +1,22 @@
 # Alexandre Brispot [![Open to offers](https://img.shields.io/badge/Open%20to%20offers-Yes-1abc9c.svg)](#)
 
-[![PDF version](https://img.shields.io/badge/PDF%20version-Download-A09BE7.svg)](https://github.com/Kireyin/Resume/raw/main/resume.pdf)
+[![PDF - English](https://img.shields.io/badge/PDF-English-A09BE7.svg)](https://github.com/Kireyin/Resume/raw/main/resume.pdf)
+[![PDF - Français](https://img.shields.io/badge/PDF-Fran%C3%A7ais-A09BE7.svg)](https://github.com/Kireyin/Resume/raw/main/resume.fr.pdf)
+[![PDF - 繁體中文](https://img.shields.io/badge/PDF-%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87-A09BE7.svg)](https://github.com/Kireyin/Resume/raw/main/resume.zh-tw.pdf)
 
 If you are looking for an iOS dev, a Mobile dev lead/manager, in Paris (FR) or remotely, you are on the good repo ;)</br>
-Just click the badge above dowload my resume.
+Click a badge above to download my resume (English, French, or Traditional Chinese).
+
+## How this repo is built
+
+Resume content lives as per-language data in [`site/content/`](site/content) (`en.json`,
+`fr.json`, `zh-TW.json`) — the single source of truth. Two independent tracks render it:
+
+- **PDF** — `build_resume.py` merges the content with the LaTeX styling in
+  [`templates/styling.tex`](templates/styling.tex) and Pandoc + XeLaTeX produces
+  `resume.pdf` / `resume.fr.pdf` / `resume.zh-tw.pdf` in CI.
+- **Website** — a static, no-build site in [`site/`](site) (`index.html` + `style.css` +
+  `app.js`) that fetches the same JSON and renders it, with a language switcher. Deployable
+  to any static host.
+
+See [`CLAUDE.md`](CLAUDE.md) for the full build details.

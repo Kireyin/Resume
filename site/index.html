@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexandre Brispot — Resume</title>
+  <meta name="description" content="Resume of Alexandre Brispot, Senior iOS Engineer.">
+  <!-- Noto Sans TC is served in unicode-range subsets, so en/fr pages download no CJK glyphs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="lang-switcher" id="lang-switcher" aria-label="Language"></nav>
+
+  <main class="resume" id="resume">
+    <header class="resume-header">
+      <h1 class="name" id="name"></h1>
+      <p class="tagline" id="tagline"></p>
+      <p class="contact"><a id="contact" href="#" rel="noopener"></a></p>
+      <p class="actions"><a class="pdf-link" id="pdf-link" href="#" download></a></p>
+    </header>
+
+    <p class="summary" id="summary"></p>
+
+    <section aria-labelledby="h-experience">
+      <h2 id="h-experience"></h2>
+      <div id="experience"></div>
+    </section>
+
+    <section aria-labelledby="h-education">
+      <h2 id="h-education"></h2>
+      <div id="education"></div>
+    </section>
+
+    <section aria-labelledby="h-skills">
+      <h2 id="h-skills"></h2>
+      <ul id="skills" class="plain-list"></ul>
+    </section>
+
+    <section aria-labelledby="h-languages">
+      <h2 id="h-languages"></h2>
+      <ul id="languages" class="plain-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
