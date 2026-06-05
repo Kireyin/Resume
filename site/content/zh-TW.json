@@ -14,8 +14,12 @@
     "skills": "專業技能",
     "languages": "語言能力"
   },
+  "ui": {
+    "download_pdf": "下載 PDF"
+  },
   "experience": [
     {
+      "id": "datadome",
       "company": "DataDome",
       "title": "資深 iOS 軟體工程師",
       "date": "2022年9月 - 至今",
@@ -29,6 +33,7 @@
       ]
     },
     {
+      "id": "sightcall",
       "company": "SightCall",
       "title": "資深 iOS 工程師",
       "date": "2021年3月 - 2022年9月",
@@ -42,6 +47,7 @@
       ]
     },
     {
+      "id": "mention",
       "company": "Mention",
       "title": "iOS 工程師",
       "date": "2015年9月 - 2021年3月",
@@ -56,32 +62,36 @@
       ]
     },
     {
+      "id": "rotormatch",
       "company": "RotorMatch",
       "title": "共同創辦人暨軟體工程師（兼職）",
       "date": "2016年2月 - 2020年1月",
       "location": "Paris, Île-de-France, France",
-      "page_break_before": true,
       "bullets": [
         "共同創辦一家無人機競速賽事科技公司",
         "建置賽事計時系統：用於訊號擷取的嵌入式系統、用於資料讀取與後端同步的 Swift 應用程式（自製 UDP 函式庫），以及賽事指揮中心的網頁應用程式",
         "同步直播至多個平台，包括我們自有的 RotorTV",
         "賽事規劃平台、票務預訂平台",
         "NFC／RFID 整合與自訂協定的逆向工程"
-      ]
+      ],
+      "page_break_before": true
     }
   ],
   "education": [
     {
+      "id": "epitech",
       "institution": "EPITECH - 歐洲科技學院",
       "date": "2010 - 2015",
       "detail": "碩士學位，軟體工程"
     },
     {
+      "id": "bjtu",
       "institution": "北京交通大學 (Beijing Jiaotong University)",
       "date": "2013 - 2014",
       "detail": "碩士一年級，軟體工程"
     },
     {
+      "id": "hec",
       "institution": "HEC 巴黎商學院",
       "date": "2013",
       "detail": "商業數位創新證書 - 電子商務 · 管理 · 精實創業"

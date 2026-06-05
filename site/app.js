@@ -3,11 +3,12 @@
 // Supported languages: code -> label shown in the switcher.
 const LANGS = { "en": "English", "fr": "Français", "zh-TW": "中文" };
 
-// Per-language UI strings and the matching PDF filename (English keeps resume.pdf).
-const UI = {
-  "en":    { pdf: "Download PDF",    file: "resume.pdf" },
-  "fr":    { pdf: "Télécharger le PDF", file: "resume.fr.pdf" },
-  "zh-TW": { pdf: "下載 PDF",        file: "resume.zh-tw.pdf" },
+// PDF filename per language (config, not translation; English keeps resume.pdf).
+// The button *label* is a translatable string and comes from the content JSON.
+const PDF_FILE = {
+  "en": "resume.pdf",
+  "fr": "resume.fr.pdf",
+  "zh-TW": "resume.zh-tw.pdf",
 };
 
 const $ = (id) => document.getElementById(id);
@@ -96,8 +97,8 @@ function render(d, lang) {
   contact.href = d.contact.url;
 
   const pdf = $("pdf-link");
-  pdf.textContent = UI[lang].pdf;
-  pdf.href = UI[lang].file;
+  pdf.textContent = d.ui.download_pdf;
+  pdf.href = PDF_FILE[lang];
 
   $("summary").textContent = d.summary;
 

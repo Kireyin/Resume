@@ -9,8 +9,9 @@ Click a badge above to download my resume (English, French, or Traditional Chine
 
 ## How this repo is built
 
-Resume content lives as per-language data in [`site/content/`](site/content) (`en.json`,
-`fr.json`, `zh-TW.json`) — the single source of truth. Two independent tracks render it:
+English content lives in [`site/content/en.json`](site/content/en.json) — the single source
+of truth. Translations are authored as gettext catalogs in [`locale/`](locale) and compiled
+into `site/content/fr.json` / `zh-TW.json`. Two independent tracks render the content:
 
 - **PDF** — `build_resume.py` merges the content with the LaTeX styling in
   [`templates/styling.tex`](templates/styling.tex) and Pandoc + XeLaTeX produces
@@ -18,5 +19,13 @@ Resume content lives as per-language data in [`site/content/`](site/content) (`e
 - **Website** — a static, no-build site in [`site/`](site) (`index.html` + `style.css` +
   `app.js`) that fetches the same JSON and renders it, with a language switcher. Deployable
   to any static host.
+
+### Translating
+
+Translators never touch JSON. Open [`locale/fr.po`](locale/fr.po) or
+[`locale/zh-TW.po`](locale/zh-TW.po) in [Poedit](https://poedit.net) (free, Win/Mac/Linux) —
+each entry shows the English source with a box for the translation. Translate, save, then run
+`python3 i18n.py compile` (after `pip install polib`) to regenerate the JSON the site and
+PDFs consume. CI recompiles on every push, so the JSON can't drift from the catalogs.
 
 See [`CLAUDE.md`](CLAUDE.md) for the full build details.

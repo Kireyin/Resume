@@ -21,6 +21,12 @@ jobs:
           # PR head branch on pull_request; empty on push -> default ref (the pushed branch, e.g. main)
           ref: ${{ github.head_ref }}
 
+      - name: Compile translations (locale/*.po -> site/content/*.json)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install --quiet polib
+          /tmp/venv/bin/python i18n.py compile
+
       - name: Generate per-language markdown
         # build_resume.py merges templates/styling.tex with site/content/<lang>.json into
         # the markdown shape the Pandoc pipeline already consumes. python3 ships on the runner.
@@ -78,7 +84,7 @@ jobs:
         run: |
           git config --local user.name Kireyin
           git config --local user.email kireyin@users.noreply.github.com
-          git add resume.pdf resume.fr.pdf resume.zh-tw.pdf
+          git add resume.pdf resume.fr.pdf resume.zh-tw.pdf site/content/fr.json site/content/zh-TW.json
           git commit -m "Generate PDF" || echo "No changes to commit"
 
       - name: Push
@@ -117,6 +123,11 @@ jobs:
         with:
           name: resume-pdfs
           path: site
+      - name: Compile translations (locale/*.po -> site/content/*.json)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install --quiet polib
+          /tmp/venv/bin/python i18n.py compile
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
